@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B6E6E3BC-4FB2-4C42-9871-B829FBC8BC8C}</ProjectGuid>
+    <ProjectGuid>{DE98588F-DC2E-44A5-A63D-856FF9F99C01}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>BattleArena</RootNamespace>
     <AssemblyName>BattleArena</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,15 +44,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abilities\IDefender.cs" />
+    <Compile Include="Abilities\IHealable.cs" />
+    <Compile Include="Abilities\IHealCaster.cs" />
+    <Compile Include="Abilities\ISpellCaster.cs" />
+    <Compile Include="BattleArena.cs" />
+    <Compile Include="Combat\TurnEntry.cs" />
+    <Compile Include="Enums\TeamType.cs" />
+    <Compile Include="Enums\WarriorType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Warriors\Fighter.cs" />
-    <Compile Include="Warriors\Marksman.cs" />
-    <Compile Include="Warriors\Tank.cs" />
+    <Compile Include="Warriors\Characters\Denia.cs" />
+    <Compile Include="Combat\DamageInfo.cs" />
+    <Compile Include="Warriors\Characters\Yuuki.cs" />
+    <Compile Include="Warriors\Characters\Reimu.cs" />
+    <Compile Include="Warriors\Characters\Rover.cs" />
+    <Compile Include="Warriors\Characters\Node.cs" />
+    <Compile Include="Warriors\Characters\Rim.cs" />
+    <Compile Include="Warriors\Characters\Victoria.cs" />
+    <Compile Include="Warriors\Characters\Mark.cs" />
+    <Compile Include="Warriors\Characters\Mr.Yang.cs" />
+    <Compile Include="Warriors\Characters\Mabel.cs" />
     <Compile Include="Warriors\Warrior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
