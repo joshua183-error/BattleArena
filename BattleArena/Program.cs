@@ -13,20 +13,20 @@
             static void Main(string[] args)
             {
                 int round = 1;
-                var Raymond = new Marksman("Raymond", 100, 30);
-                var Kirk = new Fighter("Kirk", 200, 15);
-                var Cods = new Tank("Cods", 150, 30);
+                var Denia = new Marksman("Denia", 100, 30);
+                var Mabel = new Fighter("Mabel", 200, 15);
+                var Yuuki = new Tank("Yuuki", 150, 30);
 
-                Raymond.DisplayStats();
-                Kirk.DisplayStats();
-                Cods.DisplayStats();
+                Denia.DisplayStats();
+                Mabel.DisplayStats();
+                Yuuki.DisplayStats();
              
-                while(Raymond.IsAlive && Kirk.IsAlive && Cods.IsAlive)
+                while(Denia.IsAlive && Mabel.IsAlive && Yuuki.IsAlive)
                 {
                 
-                    Raymond.Attack(Kirk);
+                    Denia.Attack(Mabel);
                     Console.WriteLine("----------------------------------------------");
-                    Cods.Attack(Raymond);
+                    Cods.Attack(Denia);
                     Console.WriteLine("----------------------------------------------");
                     round++;
                 }
