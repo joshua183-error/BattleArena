@@ -1,37 +1,27 @@
-﻿﻿﻿    using BattleArena.Warriors;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+﻿using BattleArena.Enums;
+using BattleArena.Warriors.Characters;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
-    namespace BattleArena
+namespace BattleArena
+{
+    internal class Program
     {
-
-        internal class Program
+        static void Main(string[] args)
         {
-            static void Main(string[] args)
-            {
-                int round = 1;
-                var Denia = new Marksman("Denia", 100, 30);
-                var Mabel = new Fighter("Mabel", 200, 15);
-                var Yuuki = new Tank("Yuuki", 150, 30);
+            var Mark = new Mark(100, 30, 25, 10, TeamType.A);
+            var Mabel = new Mabel ( 200, 15, 10, 30, TeamType.B);
+            var Denia = new Denia(150, 20, 15, 10, TeamType.A);
 
-                Denia.DisplayStats();
-                Mabel.DisplayStats();
-                Yuuki.DisplayStats();
-             
-                while(Denia.IsAlive && Mabel.IsAlive && Yuuki.IsAlive)
-                {
-                
-                    Denia.Attack(Mabel);
-                    Console.WriteLine("----------------------------------------------");
-                    Cods.Attack(Denia);
-                    Console.WriteLine("----------------------------------------------");
-                    round++;
-                }
+            BattleArena.AddWarrior(Mark);
+            BattleArena.AddWarrior(Mabel);
+            BattleArena.AddWarrior(Denia);
 
-                Console.ReadKey();
-            }
-        } 
+            BattleArena.StartBattle();
+        }
     }
+}
